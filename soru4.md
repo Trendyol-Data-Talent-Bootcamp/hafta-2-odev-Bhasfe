@@ -8,7 +8,7 @@ on t.id = s.id
 when matched then
   update set t.cdc_date = s.cdc_date, t.category = s.category
 when not matched by source then
-    update set t.is_deleted = True, t.cdc_date = s.cdc_date
+    update set t.is_deleted = True
 when not matched by target and is_deleted = False then
     insert(cdc_date, is_deleted, category)
     values(s.cdc_date, s.is_deleted, s.category)
