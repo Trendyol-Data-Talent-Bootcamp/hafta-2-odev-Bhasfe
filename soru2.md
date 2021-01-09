@@ -16,5 +16,5 @@ where year >= 1980
 select 
     athlete
 from task2
-where count_year >= 3 and third - first = 8;
+where count_year >= 3 and third - second = 4 and second - first = 4;
 ```
